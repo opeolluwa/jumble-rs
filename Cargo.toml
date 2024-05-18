@@ -1,0 +1,23 @@
+[package]
+name = "jumble"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+leptos_router = { version = "0.6.11", features = ["csr"] }
+leptos_meta = { version = "0.6.11", features = ["csr"] }
+leptos = { version = "0.6.11", features = ["csr"] }
+log = "0.4"
+gloo-net = { version = "0.5", features = ["http"] }
+
+# dependencies for client (enable when csr or hydrate set)
+wasm-bindgen = { version = "0.2" }
+console_log = { version = "1" }
+console_error_panic_hook = { version = "0.1" }
+leptos-remix-icon = "1.0.1"
+lazy_static = "1.4.0"
+serde = { version = "1.0.202", features = ["derive"] }
+rand = "0.8.5"
+getrandom = { version = "0.2.15", features = ["js"] }
+
+
