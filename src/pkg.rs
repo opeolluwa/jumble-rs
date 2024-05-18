@@ -13,11 +13,11 @@ pub struct Word {
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct Jumble {
     /// the original word
-    word: String,
+    pub word: String,
     /// meaning of the word
-    meaning: String,
+    pub meaning: String,
     /// the scrabbled word
-    scrabble: String,
+    pub scrabble: String,
 }
 
 impl Word {
@@ -33,9 +33,9 @@ impl Word {
 #[derive(Debug, Serialize, Deserialize)]
 
 pub struct Library {
-    /// all the available words 
+    /// all the available words
     pub words: Vec<Word>,
-    /// the legth of the available words 
+    /// the legth of the available words
     pub length: usize,
 }
 
@@ -52,21 +52,21 @@ impl Library {
         let word_index = rng.gen_range(0..=library.length);
         let fetched_word = &library.words[word_index];
         // scrabble the word
-        let mut scrabble_word = |word: String| -> String { 
+        let mut scrabble_word = |word: String| -> String {
             let mut new_word = String::new();
-            let mut char_array : Vec<usize> = Vec::new();
-            while new_word.len() != word.len()  {
-                // create a random index of the string 
+            let mut char_array: Vec<usize> = Vec::new();
+            while new_word.len() != word.len() {
+                // create a random index of the string
                 let char_index = rng.gen_range(0..word.len());
-                if !char_array.contains(&char_index){
+                if !char_array.contains(&char_index) {
                     char_array.push(char_index);
-                    // create the new word 
+                    // create the new word
                     // new_word.push(word.as_bytes()[char_index]);
-                    new_word.push(word.as_bytes()[char_index] as char) ;
+                    new_word.push(word.as_bytes()[char_index] as char);
                 }
             }
-         new_word
-         };
+            new_word
+        };
         Jumble {
             word: fetched_word.clone().word,
             meaning: fetched_word.clone().meaning,

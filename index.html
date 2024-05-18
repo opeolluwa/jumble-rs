@@ -1,12 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link data-trunk rel="rust" data-wasm-opt="z" />
-    <link data-trunk rel="icon" type="image/ico" href="/public/favicon.ico" />
-    <link data-trunk rel="tailwind-css" href="/style/tailwind.css" />
-    <title>Leptos • Counter with Tailwind</title>
-  </head>
 
-  <body></body>
+<head>
+  <meta charset="utf-8" />
+  <link data-trunk rel="rust" data-wasm-opt="z" />
+  <link data-trunk rel="icon" type="image/ico" href="/public/favicon.ico" />
+  <link data-trunk rel="tailwind-css" href="/style/tailwind.css" />
+  <title>Jumble</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+  <link data-trunk rel="copy-dir" href="./assets">
+  <style>
+    #unsupported-message {
+      display: none;
+      text-align: center;
+      margin-top: 20%;
+      font-size: 24px;
+      color: red;
+    }
+
+    body {
+      font-family: "Fira Sans", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 18px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="unsupported-message"
+    class="text-3xl bg-red-50 text-red-500 leading-1 font-bold w-fit mx-auto py-8 px-6 flex justify-center items-center">
+    Sorry,
+    only mobile devices
+    are supported</div>
+  <div id="game-content">
+    <!-- Your game content goes here -->
+  </div>
+
+  <!-- <script src="/assets/js/device.js">
+  </script> -->
+  <!-- <script src="./assets/js/prevent-refresh.js"></script> -->
+</body>
+
 </html>
